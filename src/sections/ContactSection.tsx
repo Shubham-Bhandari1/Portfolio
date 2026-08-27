@@ -15,6 +15,7 @@ export function ContactSection() {
   const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string }>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [copiedEmail, setCopiedEmail] = useState(false);
 
   const handleCopyEmail = async () => {
@@ -44,28 +45,51 @@ export function ContactSection() {
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
     setIsSubmitting(true);
+    setErrorMessage("");
 
-    // Simulate transmission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-
-      // Trigger celebratory confetti
-      confetti({
-        particleCount: 100,
-        spread: 80,
-        origin: { y: 0.6 },
-        colors: ["#00f2fe", "#a855f7", "#10b981", "#ffffff"],
+    try {
+      // Send real email directly to Shubham's Gmail via Web3Forms API
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "a73e6f48-5fcc-4510-b9e0-5ed0234dd414",
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          reply_to: formData.email,
+          from_name: `${formData.name} (Portfolio Inquiry)`,
+          subject: `[PORTFOLIO TRANSMISSION] New message from ${formData.name}`,
+        }),
       });
 
-      // Clear form
-      setFormData({ name: "", email: "", message: "" });
-    }, 1200);
+      const result = await response.json();
+
+      if (response.status === 200 && result.success) {
+        setIsSuccess(true);
+        confetti({
+          particleCount: 100,
+          spread: 80,
+          origin: { y: 0.6 },
+          colors: ["#00f2fe", "#a855f7", "#10b981", "#ffffff"],
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setErrorMessage(result.message || "Unable to send message right now. Please email directly.");
+      }
+    } catch {
+      setErrorMessage("Network error occurred. You can click the email button to message directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -75,7 +99,7 @@ export function ContactSection() {
           badge="// SECURE TRANSMISSION"
           title="Let's Build Something"
           gradientText="Amazing Together"
-          subtitle="Have an exciting project, open role, or technical collaboration? Send an encrypted transmission or reach out through my direct channels."
+          subtitle="Have an exciting project, open role, or technical collaboration? Send a transmission directly to my Gmail or connect via LinkedIn."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start max-w-6xl mx-auto">
@@ -172,14 +196,14 @@ export function ContactSection() {
             </GlassCard>
           </div>
 
-          {/* Right Column: Interactive Futuristic Contact Form */}
+          {/* Right Column: Real Direct-to-Gmail Contact Form */}
           <div className="lg:col-span-7">
             <GlassCard className="p-6 sm:p-8 md:p-10 border border-cyan-500/30 relative">
               <h3 className="text-2xl font-bold text-white tracking-tight mb-2">
                 Send Direct Message
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 mb-6">
-                Fill in the details below to initiate direct communication.
+                Messages sent through this form will arrive directly in my Gmail inbox (<strong>{PORTFOLIO_DATA.personal.email}</strong>).
               </p>
 
               {isSuccess ? (
@@ -193,7 +217,7 @@ export function ContactSection() {
                   </div>
                   <h4 className="text-xl font-bold text-white">Transmission Successful!</h4>
                   <p className="text-sm text-slate-200 max-w-md mx-auto">
-                    Thank you for reaching out, Shubham will receive your message and respond shortly.
+                    Your message was delivered directly to Shubham&apos;s Gmail inbox (<strong>{PORTFOLIO_DATA.personal.email}</strong>). You will receive a response shortly!
                   </p>
                   <button
                     type="button"
@@ -307,6 +331,12 @@ export function ContactSection() {
                     )}
                   </div>
 
+                  {errorMessage && (
+                    <p className="text-xs text-rose-400 font-mono flex items-center gap-1.5">
+                      <AlertCircle className="w-4 h-4" /> {errorMessage}
+                    </p>
+                  )}
+
                   {/* Submit Button */}
                   <NeonButton
                     type="submit"
@@ -323,7 +353,7 @@ export function ContactSection() {
                     iconPosition="right"
                     className="w-full justify-center mt-2"
                   >
-                    {isSubmitting ? "Transmitting..." : "Send Encrypted Message"}
+                    {isSubmitting ? "Transmitting to Gmail..." : "Send Encrypted Message"}
                   </NeonButton>
                 </form>
               )}
