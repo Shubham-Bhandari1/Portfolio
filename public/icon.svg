@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="16" fill="#030712" />
+  <rect x="1" y="1" width="62" height="62" rx="15" stroke="url(#borderGlow)" stroke-width="2" />
+  
+  <!-- Terminal Prompt Symbol -->
+  <path d="M18 22L28 32L18 42" stroke="#00f2fe" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <line x1="32" y1="42" x2="46" y2="42" stroke="#a855f7" stroke-width="4" stroke-linecap="round" />
+
+  <!-- Ambient Glow Gradients -->
+  <defs>
+    <linearGradient id="borderGlow" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00f2fe" />
+      <stop offset="0.5" stop-color="#3b82f6" />
+      <stop offset="1" stop-color="#a855f7" />
+    </linearGradient>
+  </defs>
+</svg>

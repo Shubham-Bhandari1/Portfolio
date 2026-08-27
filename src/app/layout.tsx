@@ -55,6 +55,11 @@ export const metadata: Metadata = {
       "Building scalable modern web applications and data-driven systems.",
     creator: "@shubham_dev",
   },
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
