@@ -753,13 +753,13 @@ export const PORTFOLIO_DATA = {
       role: "Data Analytics Intern",
       company: "InAmigos Foundation",
       location: "Remote",
-      duration: "Jul 2026 – Jul 2026",
+      duration: "Jun 2026 – Jul 2026",
       type: "Internship",
       description:
-        "Worked on real-world data analysis tasks, including cleaning and organizing datasets to support decision-making, generating concise reports, and collaborating with a remote team.",
+        "Worked on data cleaning, organization, and analysis tasks using real-world datasets to support decision-making, preparing concise reports and collaborating with a remote team.",
       achievements: [
-        "Worked on real-world data analysis tasks, including cleaning and organizing datasets to support decision-making.",
-        "Created concise reports and collaborated with a remote team to deliver assigned tasks on schedule.",
+        "Worked on data cleaning, organization, and analysis tasks using real-world datasets to support decision-making.",
+        "Prepared concise reports and collaborated with a remote team to complete assigned tasks on schedule.",
         "Strengthened analytical, problem-solving, and communication skills through structured project work.",
       ],
       technologies: [
