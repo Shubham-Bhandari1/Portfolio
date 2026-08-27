@@ -431,21 +431,6 @@ export const PORTFOLIO_DATA = {
       color: "#4479A1",
       inOrbit: true,
     },
-    {
-      id: "mongodb",
-      name: "MongoDB",
-      category: "database",
-      iconName: "SiMongodb",
-      iconType: "si",
-      level: 78,
-      experience: "NoSQL Database",
-      shortDesc: "Document-oriented database for flexible schema persistence.",
-      detailedDesc: "Used for project persistence and collaborative session storage in LiveCode.",
-      relatedProjects: ["LiveCode"],
-      relevantSkills: ["Collections", "Documents", "Mongoose", "Aggregation"],
-      color: "#47A248",
-      inOrbit: false,
-    },
 
     // AI & Data
     {
@@ -718,7 +703,6 @@ export const PORTFOLIO_DATA = {
         "Next.js",
         "Node.js",
         "Express.js",
-        "MongoDB",
         "Monaco Editor",
         "Xterm.js",
         "Docker",
@@ -733,7 +717,7 @@ export const PORTFOLIO_DATA = {
         "Frontend: React/Next.js interface with Monaco Editor and Xterm.js terminal.",
         "Backend: Node.js and Express.js API services.",
         "Execution: Docker-based isolated code execution containers.",
-        "Database: MongoDB for project persistence and session state.",
+        "Persistence: Project persistence and collaborative session state.",
       ],
       features: [
         "Real-time browser-based code editing",

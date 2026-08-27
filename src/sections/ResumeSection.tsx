@@ -21,9 +21,9 @@ export function ResumeSection() {
 
   const resumeHighlights = [
     "Full-Stack Web Development with Next.js, React, Node.js & NestJS",
-    "Database Engineering & Data Analysis with SQL, PostgreSQL & MongoDB",
-    "Hands-on Internship Experience at Inamigos with API & Application Data",
-    "Strong Computer Science Foundation (BCA, Tula's Institute - CGPA: 7.83)",
+    "Database Engineering & Data Analysis with PostgreSQL, MySQL & SQL",
+    "Hands-on Internship Experience at InAmigos with API & Application Data",
+    "Strong Computer Science Foundation (BCA, Tula's University — 2024–2027)",
   ];
 
   return (
