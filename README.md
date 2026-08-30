@@ -1,6 +1,6 @@
 # 🌌 Shubham Bhandari — Futuristic Developer Portfolio
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://shubhambhandari-portfolio.vercel.app/)
 [![Next.js](https://img.shields.io/badge/Next.js%2015-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
@@ -12,7 +12,7 @@
 
 ## 🌐 Live Website & Links
 
-* **Live Portfolio**: Deployed on **[Vercel](https://vercel.com)**
+* **Live Portfolio**: **[https://shubhambhandari-portfolio.vercel.app](https://shubhambhandari-portfolio.vercel.app/)**
 * **GitHub Repository**: [https://github.com/Shubham-Bhandari1/Portfolio](https://github.com/Shubham-Bhandari1/Portfolio)
 * **LinkedIn**: [https://www.linkedin.com/in/shubham-bhandari-95642532a](https://www.linkedin.com/in/shubham-bhandari-95642532a)
 * **Direct Email**: `shubhambhndari@gmail.com`

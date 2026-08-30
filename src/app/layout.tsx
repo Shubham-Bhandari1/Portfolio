@@ -38,13 +38,14 @@ export const metadata: Metadata = {
     "PostgreSQL",
     "AI Search Engine",
   ],
+  metadataBase: new URL("https://shubhambhandari-portfolio.vercel.app"),
   authors: [{ name: "Shubham Bhandari" }],
   creator: "Shubham Bhandari",
   openGraph: {
     title: "Shubham Bhandari | Full Stack Developer & Data Analytics",
     description:
       "Building scalable, modern, and interactive web applications with a focus on clean architecture, data insights, and great user experiences.",
-    url: "https://shubhambhandari.dev",
+    url: "https://shubhambhandari-portfolio.vercel.app",
     siteName: "Shubham Bhandari Portfolio",
     type: "website",
   },
